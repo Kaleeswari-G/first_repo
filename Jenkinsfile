@@ -1,4 +1,4 @@
-pieplin{
+pipeline{
    stages{
      stage("Hello"){
         echo "Hello"
