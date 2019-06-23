@@ -1,10 +1,21 @@
-pieplin{
-   stages{
-     stage("Hello"){
-        echo "Hello"
+pipeline
+{
+   agent any
+   stages
+   {
+     stage('Hello')
+     {
+        steps
+        {     
+           echo "Hello"
+        }
      }
-     stage("world"){
-        echo "World"
+     stage('world')
+     {
+        steps
+        {
+           echo "World"
+        }
      }
-  }
+   }
 }
