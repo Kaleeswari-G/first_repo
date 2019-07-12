@@ -10,12 +10,5 @@ pipeline
            echo "Hello"
         }
      }
-     stage('world')
-     {
-        steps
-        {
-           echo "World"
-        }
-     }
    }
 }
