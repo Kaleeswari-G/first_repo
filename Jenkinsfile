@@ -25,7 +25,7 @@ pipeline
                     return env.BUILD_USER
                   echo "${env.BUILD_USER}"
               }
-              echo "${buser}"
+             // echo "${buser}"
            }
            echo "World"
            calling()
