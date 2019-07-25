@@ -23,9 +23,9 @@ pipeline
            script{
               buser=wrap([$class: 'BuildUser']) {
                     return env.BUILD_USER
-                  echo "${env.BUILD_USER}"
               }
-             // echo "${buser}"
+              echo "${buser}"
+              echo "inside script"
            }
            echo "World"
            calling()
