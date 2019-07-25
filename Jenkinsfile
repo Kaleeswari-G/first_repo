@@ -28,7 +28,7 @@ pipeline
               echo "inside script"
            }
            echo "World"
-            calling(${buser})
+            calling("${buser}")
         }
      }
    }
