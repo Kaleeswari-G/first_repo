@@ -27,8 +27,8 @@ pipeline
               echo "${buser}"
            }
            echo "World"
+           calling()
         }
-        calling()
      }
    }
 }
