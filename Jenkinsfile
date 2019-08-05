@@ -27,10 +27,11 @@ pipeline
               }
               echo "${buser}"
               echo "inside script"
+               gc=calling("${buser}")
+           echo "${gc}"
            }
            echo "World"
-           gc=calling("${buser}")
-           echo "${gc}"
+           
         }
      }
    }
