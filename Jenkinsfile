@@ -7,6 +7,7 @@ pipeline
    environment{
       buser=""
       gc=""
+       gitcommit=""
    }
    stages
    {
@@ -27,6 +28,7 @@ pipeline
               }
               echo "${buser}"
               echo "inside script"
+             //  gc=calling("${buser}")
                gc=calling("${buser}")
            echo "${gc}"
            }
