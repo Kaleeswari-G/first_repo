@@ -6,6 +6,7 @@ pipeline
    agent any
    environment{
       buser=""
+      gc=""
    }
    stages
    {
@@ -28,7 +29,8 @@ pipeline
               echo "inside script"
            }
            echo "World"
-            calling("${buser}")
+           gc=calling("${buser}")
+           echo "${gc}"
         }
      }
    }
