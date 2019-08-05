@@ -2,7 +2,6 @@ def call(buser){
   /*def buser=wrap([$class: 'BuildUser']) {
                     return env.BUILD_USER
                     }*/
-  def gitcommit=''
   echo "Inside Library function: ${buser}"
   if(env.GIT_URL.contains("https://"))
   {
