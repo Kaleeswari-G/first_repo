@@ -40,8 +40,11 @@ pipeline
    post{
        always{
            script{
-              build job:'cd-test' , parameters:[choice(name: 'ENVIRONMENT',value: 'STAGE')]
+              cd("STAGE")
            }
        }
    }
+}
+def cd(VAL){
+    build job:'cd-test' , parameters:[choice(name: 'ENVIRONMENT',value: VAL)]
 }
