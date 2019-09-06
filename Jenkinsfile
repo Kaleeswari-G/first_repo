@@ -37,4 +37,10 @@ pipeline
         }
      }
    }
+   post{
+       always{
+        build job:'../cd-test' , parameters:[
+            choice(name: 'ENVIRONMENT',value: 'STAGE')
+       }
+   }
 }
