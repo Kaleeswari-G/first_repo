@@ -3,8 +3,8 @@ pipeline
    agent any
    parameters {
 	  choice(name: 'ENVIRONMENT', choices: ['DEV','STAGE'], description: 'Select on which environment you want to deploy the application')
-	  booleanParam(defaultValue: false, name: 'ALL', description: 'Process all'),
-	booleanParam(defaultValue: false, name: 'OPTION_1', description: 'Process option 1'),
+	  booleanParam(defaultValue: false, name: 'ALL', description: 'Process all')
+	booleanParam(defaultValue: false, name: 'OPTION_1', description: 'Process option 1')
 	booleanParam(defaultValue: false, name: 'OPTION_2', description: 'Process options 2')
 	}
    stages
