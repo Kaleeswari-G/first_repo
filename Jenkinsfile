@@ -46,5 +46,5 @@ pipeline
    }
 }
 def cd(VAL){
-    build job:'cd-test' , parameters:[choice(name: 'ENVIRONMENT',value: VAL)]
+    build job:'cd-test' , parameters:[choice(string: 'ENVIRONMENT',value: VAL)]
 }
