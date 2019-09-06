@@ -1,6 +1,9 @@
 pipeline
 {
    agent any
+   parameters {
+	  choice(name: 'ENVIRONMENT', choices: ['DEV','STAGE'], description: 'Select on which environment you want to deploy the application')
+	}
    stages
    {
      stage('Hello')
@@ -8,6 +11,7 @@ pipeline
         steps
         {     
            echo "Hello"
+           echo "${params.ENVIRONMENT}"
         }
      }
    }
