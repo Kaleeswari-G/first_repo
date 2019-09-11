@@ -41,6 +41,9 @@ pipeline
        always{
            script{
               cd("STAGE")
+               
+               def encoded = "Hello %2F World".bytes.decodeBase64().toString()
+               echo "${encoded}"
            }
        }
    }
