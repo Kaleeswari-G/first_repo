@@ -16,7 +16,7 @@ pipeline
          steps{
              git url: 'https://github.com/jenkinsci/last-changes-plugin.git'
              script{
-        def publisher = LastChanges.getLastChangesPublisher "LAST_SUCCESSFUL_BUILD", "SIDE", "LINE", true, true, "", "", "", "", ""
+              def publisher = LastChanges.getLastChangesPublisher "LAST_SUCCESSFUL_BUILD", "SIDE", "LINE", true, true, "", "", "", "", ""
               publisher.publishLastChanges()
               def changes = publisher.getLastChanges()
               println(changes.getEscapedDiff())
@@ -27,7 +27,7 @@ pipeline
                   println(commitInfo.getCommitMessage())
                   println(commit.getChanges())
               }
-              }
+           }
          }
       }
    }
