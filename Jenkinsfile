@@ -22,7 +22,7 @@ pipeline
               println(changes.getEscapedDiff())
               for (commit in changes.getCommits()) {
                   //println(commit)
-                  //def commitInfo = commit.getCommitInfo()
+                  def commitInfo = commit.getCommitInfo()
                   //println(commitInfo)
                   println(commitInfo.getCommitMessage())
                   //println(commit.getChanges())
