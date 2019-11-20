@@ -2,7 +2,7 @@ pipeline
 {
    agent any
    environment{
-      change = "${BUILD_URL}changes/"
+      change = "${BUILD_URL}changes"
    }
    stages
    {
@@ -38,8 +38,7 @@ pipeline
    post{
        always{
            addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${BUILD_URL}last-changes/");
-           addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${BUILD_URL}changes/");
-           addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${change}");
+           addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${BUILD_URL}changes");
        }
    }
 }
