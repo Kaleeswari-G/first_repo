@@ -34,6 +34,7 @@ pipeline
    post{
        always{
            addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${BUILD_URL}last-changes/");
+           addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${BUILD_URL}changes/");
        }
    }
 }
