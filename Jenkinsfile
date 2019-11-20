@@ -1,6 +1,9 @@
 pipeline
 {
    agent any
+   environments{
+      change = "${BUILD_URL}changes/"
+   }
    stages
    {
      stage('Hello')
@@ -10,6 +13,7 @@ pipeline
            echo "Hello"
            lastChanges since: 'LAST_SUCCESSFUL_BUILD', format:'SIDE',matching: 'LINE'
            sh "echo ${BUILD_URL}last-changes/"
+           sh "echo ${BUILD_URL}changes/"
         }
      }
      stage("last-changes") {
@@ -34,7 +38,8 @@ pipeline
    post{
        always{
            addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${BUILD_URL}last-changes/");
-           addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${BUILD_URL}/changes/");
+           addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${BUILD_URL}changes/");
+           addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${change}");
        }
    }
 }
