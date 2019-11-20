@@ -1,7 +1,7 @@
 pipeline
 {
    agent any
-   environments{
+   environment{
       change = "${BUILD_URL}changes/"
    }
    stages
