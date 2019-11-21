@@ -18,19 +18,20 @@ pipeline
      }
      stage("last-changes") {
          steps{
-             git url: 'https://github.com/jenkinsci/last-changes-plugin.git'
-             script{
-              def publisher = LastChanges.getLastChangesPublisher "PREVIOUS_REVISION", "SIDE", "LINE", true, true, "", "", "", "", ""
-              publisher.publishLastChanges()
-              def changes = publisher.getLastChanges()
-              //println(changes.getEscapedDiff())
-              for (commit in changes.getCommits()) {
-                  //println(commit)
-                  def commitInfo = commit.getCommitInfo()
-                  //println(commitInfo)
-                  println(commitInfo.getCommitMessage())
-                  //println(commit.getChanges())
-              }
+             checkout scm: [
+    $class: 'GitSCM',
+    branches: [[name: env.BRANCH_NAME]],
+    extensions: [
+        [
+            $class: 'ChangelogToBranch',
+            options: [
+                compareRemote: 'origin',
+                compareTarget: 'master'
+            ]
+        ]
+    ]
+    ]
+]
            }
          }
       }
