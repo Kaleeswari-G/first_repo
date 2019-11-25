@@ -11,7 +11,7 @@ pipeline
         steps
         {     
            echo "Hello"
-           lastChanges since: 'LAST_SUCCESSFUL_BUILD', format:'SIDE',matching: 'LINE'
+           lastChanges since: 'PREVIOUS_REVISION', format:'SIDE',matching: 'LINE'
            sh "echo ${BUILD_URL}last-changes/"
            sh "echo ${BUILD_URL}changes/"
         }
