@@ -1,3 +1,9 @@
+library identifier: 'first_repo@test', retriever: modernSCM([
+    $class: 'GitSCMSource',
+    remote: 'https://github.com/Kaleeswari-G/first_repo.git',
+    credentialsId: '77'
+])
+
 pipeline
 {
    agent any
