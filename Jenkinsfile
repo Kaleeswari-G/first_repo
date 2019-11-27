@@ -4,6 +4,11 @@ pipeline
    environment{
       change = "${BUILD_URL}changes"
    }
+   
+   parameters {
+        choice(name: 'BUILD_TYPE', choices: ['dev', 'release', 'prod'], description: 'Select the environment for Artifactory Push')
+   }
+   
    stages
    {
      stage('Hello')
@@ -39,6 +44,7 @@ pipeline
        always{
            addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${BUILD_URL}last-changes/");
            addBadge(icon: "folder.gif", text: "Git Commit Path", link: "${BUILD_URL}changes");
+           test()
        }
    }
 }
