@@ -1,4 +1,4 @@
 def call()
 {
-  addShortText(text:${params.BUILD_TYPE})
+  addShortText(text:"${params.BUILD_TYPE}")
 }
