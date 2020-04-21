@@ -51,3 +51,4 @@ pipeline
 def cd(VAL){
     build job:'cd-test' , parameters:[string(name: 'ENVIRONMENT',value: VAL)]
 }
+
