@@ -39,8 +39,8 @@ pipeline
    }
    post{
        always{
-           jiraSendBuildInfo site: 'vvdn-dev.atlassian.net'
-           jiraSendDeploymentInfo site: 'vvdn-dev.atlassian.net', environmentId: 'dev-1', environmentName: 'dev', environmentType: 'development'
+           jiraSendBuildInfo site: 'jira-dev.atlassian.net'
+           jiraSendDeploymentInfo site: 'jira-dev.atlassian.net', environmentId: 'dev-1', environmentName: 'dev', environmentType: 'development'
            script{
               cd("STAGE")
                
